@@ -21,6 +21,7 @@ public class MessageHandler(IProcessingResultService processingResultService) : 
         catch (Exception ex)
         {
             processingResultService.MarkAsFailedToProcess(message, ex.Message, processingStartTime, DateTime.Now);
+            throw;
         }
     }
 
